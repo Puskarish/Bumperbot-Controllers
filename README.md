@@ -49,13 +49,42 @@ This repo supports two controller modes:
     🧠 simple_controller: Custom Controller
     ⚙️ diff_drive_controller: Standard ROS 2 controller
 
-You can switch between them manually. Initially it is default set to simple_controller mode by using `ros2 launch bumperbot_controller controller.launch.py use_simple_controller:=false` you can use diff_drive_controller named as bumperbot_controller.
+You can switch between them manually. Initially it is default set to simple_controller mode, by using `ros2 launch bumperbot_controller controller.launch.py use_simple_controller:=false` you can use diff_drive_controller named as bumperbot_controller.
 
 ## 🕹️ Usage Instructions
 
 After launching the bumperbot in the gazebo world and its controller you can move your bumperbot in two ways:
 
-1.
+1. Move the Bumperbot via Teleop:
+   
+- First install ```teleop_twist_keyboard``` with ```sudo apt install ros-humble-teleop-twist-keyboard```.
+- The purpose of using `twist_to_twiststamped.py` : teleop twist keyboard publishes on `geometry_msgs/msg/Twist` but Bumperbot subscription message type is `geometry_msgs/msg/TwistStamped`. That's why this file is required.
+
+- On one terminal run `ros2 run bumperbot_controller twist_to_twiststamped.py`.
+- In the next terminal run `ros2 run teleop_twist_keyboard teleop_twist_keyboard`.
+
+  After this you can move the Bumperbot by the commands given in `teleop_twist_keyboard`.
+
+2. After launching the controller **Publish msg on topic bumperbot_controller/cmd_vel**:
+
+- In other terminal run
+```
+ros2 topic pub /bumperbot_controller/cmd_vel geometry_msgs/msg/TwistStamped "header:
+  stamp:
+    sec: 0
+    nanosec: 0
+  frame_id: ''
+twist:
+  linear:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  angular:
+    x: 0.0
+    y: 0.0
+    z: 0.0" 
+```
+- Now you can change the linear and angular velocity to move the Bumperbot.   
 
 ## References
 
