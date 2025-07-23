@@ -1,2 +1,11 @@
 # Bumperbot-Controllers
-The Repo contains 2 two wheeled bot controllers namely the simple_controller and the diff_drive_controller. The whole simulation is build upon the open sourced bumperbot robot.
+
+This Repo contains controller implementations for the Bumperbot designed for differntial-drive navigation,odometry,and IMU integration.
+
+
+## 📦 Packages
+
+- bumperbot_controller
+  Contains ROS 2 controller nodes:
+  - "simple_controller.py" : Python Custom Controller (Calculates wheel velocities and publishes Odometry + TF)
+  - "noisy_controller.py
