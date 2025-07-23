@@ -33,7 +33,8 @@ cd ~/bumperbot_ws
 colcon build
 source install/setup.bash
 ```
-📡 Launching the Robot
+
+## 📡 Launching the Robot
 
 1. Gazebo Simulation
    `ros2 launch bumperbot_description gazebo.launch.py`
@@ -41,4 +42,22 @@ source install/setup.bash
 2. Controller Launch
    `ros2 launch bumperbot_controller controller.launch.py`
 
+## 🎮 Switching Controllers
 
+This repo supports two controller modes:
+
+    🧠 simple_controller: Custom Controller
+    ⚙️ diff_drive_controller: Standard ROS 2 controller
+
+You can switch between them manually. Initially it is default set to simple_controller mode by using `ros2 launch bumperbot_controller controller.launch.py use_simple_controller:=false` you can use diff_drive_controller named as bumperbot_controller.
+
+## 🕹️ Usage Instructions
+
+After launching the bumperbot in the gazebo world and its controller you can move your bumperbot in two ways:
+
+1.
+
+## References
+
+[Bumperbot Github
+](https://github.com/AntoBrandi/Self-Driving-and-ROS-2-Learn-by-Doing-Odometry-Control/tree/main/Section9_Odometry/bumperbot_ws/src)
