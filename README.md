@@ -1,11 +1,13 @@
 # Bumperbot-Controllers
 
-This Repo contains controller implementations for the Bumperbot designed for differntial-drive navigation,odometry,and IMU integration.
+This Repo contains controller implementations for the Bumperbot robot using "ROS 2 Humble" and "Ignition Gazebo". It provides both custom and differntial drive controller support, allowing flexibility for simulation and experimentation.
 
+---
 
-## 📦 Packages
+## 📦 Features
 
-- bumperbot_controller
-  Contains ROS 2 controller nodes:
-  - "simple_controller.py" : Python Custom Controller (Calculates wheel velocities and publishes Odometry + TF)
-  - "noisy_controller.py
+- "Custom Python Controller" : "simple_controller.py" - (Calculates wheel velocities and publishes Odometry + TF)
+- "Standard ROS 2 Controller" : "diff_drive_controller" - from the "ros2_control" framework.
+
+## 📁 Repository Structure
+
