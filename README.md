@@ -1,4 +1,4 @@
-# Bumperbot-Controllers
+# Bumperbot-Controllers (2 wheeled)
 
 This Repo contains controller implementations for the Bumperbot robot using "ROS 2 Humble" and "Ignition Gazebo". It provides both custom and differntial drive controller support, allowing flexibility for simulation and experimentation.
 
